@@ -1,0 +1,19 @@
+syntax="proto3";
+option java_multiple_files=true;
+package com.grpc.grpcserver.proto;
+
+message AttItem {
+    string id = 1;
+    string itemId = 2;
+    string itemNo = 3;
+    int32 page = 4;
+}
+message AttItemList{
+repeated AttItem attItem=1;
+}
+service AttItemService {
+    rpc getItemService(AttItem) returns (AttItemList);
+    
+    rpc getItemStreamService(AttItem) returns (stream AttItemList);
+//    rpc findBookByISBN(ISBN) returns (Book);
+}
