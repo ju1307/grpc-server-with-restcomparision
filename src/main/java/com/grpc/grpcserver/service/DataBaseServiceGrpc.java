@@ -33,7 +33,8 @@ public class DataBaseServiceGrpc  extends AttItemServiceGrpc.AttItemServiceImplB
 			public void accept(DataEntity dataItem) { AttItem attItem =
 			   AttItem.newBuilder().setId(dataItem.getId().toString()).setItemId(dataItem.
 			   getItemId()).setItemNo(dataItem.getItemNo()).build();
-			   responseBuilder.addAttItem(attItem); }
+			   
+								 responseBuilder.addAttItem(attItem); }
 		});
 		  
 		AttItemList attItemList = responseBuilder.build();
